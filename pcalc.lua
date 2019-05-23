@@ -1,6 +1,9 @@
 #!/usr/local/bin/lua-5.3
 
 local json = require 'json' .encode
+local tofrac = require 'fraction'
+math.e = math.exp(1)
+math.log10 = function(v) return math.log(v, 10) end
 
 local res, err = load("return "..arg[1], "expr", "t", math)
 if not res then
@@ -22,7 +25,11 @@ if math.type(val) == 'float' then
       str = ("%.16f"):format(val)
       str = str:match('(%d*%.0?%d-)0*$')
    end
-   return print(json{items={{icon = {path = "10.png"}, title = str, arg = str}}})
+   local nom, den, err = tofrac(val)
+   return print(json{items={
+      {icon = {path = "10.png"}, title = str, arg = str},
+      {icon = {path = "fr.png"}, title = nom.." / "..den, arg = nom.."/"..den}
+   }})
 end
 
 function reverse(arr)
@@ -61,8 +68,8 @@ local str16 = ("%x"):format(val)
 local str8  = ("%o"):format(val)
 local str2  = bits(val)
 print(json {items={
-   {icon = {path = "10.png"}, title=group(str10, 3, '.'), arg=str10},
-   {icon = {path = "16.png"}, title=group(str16, 4,  th), arg="0x"..str16},
-   {icon = {path =  "8.png"}, title=      str8,           arg="0o"..str8},
-   {icon = {path =  "2.png"}, title=group(str2,  4,  th), arg="0b"..str2},
+   {icon = {path = "10.png"}, title=group(str10, 3, th), arg=str10},
+   {icon = {path = "16.png"}, title=group(str16, 4, th), arg="0x"..str16},
+   {icon = {path =  "8.png"}, title=      str8,          arg="0o"..str8},
+   {icon = {path =  "2.png"}, title=group(str2,  4, th), arg="0b"..str2},
 }})
