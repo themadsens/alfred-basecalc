@@ -81,9 +81,9 @@
 				<key>scriptfile</key>
 				<string>pcalc.lua</string>
 				<key>subtext</key>
-				<string>Enter a lua (v5.3) numeric expression (hint: brew install lua53)</string>
+				<string>Enter a (lua) numeric expression (hint: brew install lua)</string>
 				<key>title</key>
-				<string>Programmers calculator</string>
+				<string>A programmers calculator</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>

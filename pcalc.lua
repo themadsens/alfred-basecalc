@@ -1,4 +1,4 @@
-#!/usr/local/bin/lua-5.3
+#!/usr/local/bin/lua
 
 local json = require 'json' .encode
 local tofrac = require 'fraction'
@@ -36,7 +36,9 @@ function bits(num)
   return table.concat(reverse(t))
 end
 
-local res, err = load("return "..arg[1], "expr", "t", math)
+local conv = arg[1]:gsub('%f[%x]0b[0-1]+', function(s) return tonumber(s:sub(3), 2) end)
+                   :gsub('%f[%x]0o[0-7]+', function(s) return tonumber(s:sub(3), 8) end) 
+local res, err = load("return "..conv, "expr", "t", math)
 if not res then
    return print(json{items={{icon = {path = "err.png"}, title = "Error", subtitle = err:sub(20)}}})
 end
@@ -49,18 +51,19 @@ if type(val) ~= 'number' then
    return print(json{items={{icon = {path = "err.png"}, title = "Not a number: "..type(val), subtitle = tostring(val)}}})
 end
 if math.type(val) == 'float' then
-   local str
+   local str, fmt
    if math.abs(val) < 1e-6 or math.abs(val) > 1e19 then
       str = ("%.16g"):format(val)
    else
       str = ("%.16f"):format(val)
-      local int, dec = str:match('(%d*)%.(0?%d-)0*$')
+      local int, sep, dec = str:match('(%d*)([.,])(0?%d-)0*$')
       dec = dec:gsub('00000000000+%d?%d$', '')
-      str = group(int, 3, th).."."..dec
+      str = int..sep..dec
+      fmt = group(int, 3, th)..sep..dec
    end
    local nom, den, err = tofrac(val)
    return print(json{items={
-      {icon = {path = "10.png"}, title = str, arg = str},
+      {icon = {path = "10.png"}, title = fmt or str, arg = str},
       {icon = {path = "fr.png"}, title = nom.." / "..den, arg = nom.."/"..den}
    }})
 end
