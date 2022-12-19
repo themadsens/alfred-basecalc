@@ -1,4 +1,4 @@
-#!/usr/local/bin/lua
+#!/usr/bin/env lua5.4
 
 local json = require 'json' .encode
 local tofrac = require 'fraction'
