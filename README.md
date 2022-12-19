@@ -7,7 +7,7 @@ Everything from the [Lua math](https://www.lua.org/manual/5.4/manual.html#6.7) l
 and in addition `log10()` and `e`
 
 In addition to decimal (42) and hexadecimal (0x2a), binary (0b101010) and octal (0o52) notation is available.
-Uses '=' as the trigger keyword
+Uses '=' as the trigger keyword. Make sure to disable '=' for the built in calculator in Alfred Preferences/Features/Calculator.
 
 Requires: Lua version 5.4
 ```
