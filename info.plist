@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>dk.themadsens.pcalc</string>
+	<string>dk.themadsens.basecalc</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -25,11 +25,11 @@
 	<key>createdby</key>
 	<string>Flemming Madsen</string>
 	<key>description</key>
-	<string>Programmers calculator</string>
+	<string>A programmers calculator</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>pcalc</string>
+	<string>basecalc</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -39,6 +39,8 @@
 				<false/>
 				<key>clipboardtext</key>
 				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
 				<key>transient</key>
 				<false/>
 			</dict>
@@ -47,7 +49,7 @@
 			<key>uid</key>
 			<string>16058241-DEF4-4287-9DB6-929DA16DD1FA</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -56,6 +58,8 @@
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
 				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
 				<key>argumenttrimmode</key>
 				<integer>0</integer>
 				<key>argumenttype</key>
@@ -81,9 +85,9 @@
 				<key>scriptfile</key>
 				<string>pcalc.lua</string>
 				<key>subtext</key>
-				<string>Enter a (lua) numeric expression (hint: brew install lua)</string>
+				<string>Enter a Lua numeric expression (hint: brew install lua)</string>
 				<key>title</key>
-				<string>A programmers calculator</string>
+				<string>Programmers calculator</string>
 				<key>type</key>
 				<integer>8</integer>
 				<key>withspace</key>
@@ -94,7 +98,7 @@
 			<key>uid</key>
 			<string>01F88411-82D9-430F-9A25-94CB9B7284B5</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>3</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -104,19 +108,25 @@
 		<key>01F88411-82D9-430F-9A25-94CB9B7284B5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>140</integer>
+			<real>140</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
 		</dict>
 		<key>16058241-DEF4-4287-9DB6-929DA16DD1FA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>310</integer>
+			<real>310</real>
 			<key>ypos</key>
-			<integer>30</integer>
+			<real>30</real>
 		</dict>
 	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>1.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/themadsens/alfred-basecalc</string>
 </dict>
 </plist>
