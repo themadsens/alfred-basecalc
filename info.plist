@@ -83,7 +83,7 @@
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>pcalc.lua</string>
+				<string>basecalc.lua</string>
 				<key>subtext</key>
 				<string>Enter a Lua numeric expression (hint: brew install lua)</string>
 				<key>title</key>
@@ -125,7 +125,7 @@
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.1.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/themadsens/alfred-basecalc</string>
 </dict>
