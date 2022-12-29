@@ -85,7 +85,7 @@
 				<key>scriptfile</key>
 				<string>basecalc.lua</string>
 				<key>subtext</key>
-				<string>Enter a Lua numeric expression (hint: brew install lua)</string>
+				<string>Enter a Lua numeric expression</string>
 				<key>title</key>
 				<string>Programmers calculator</string>
 				<key>type</key>
